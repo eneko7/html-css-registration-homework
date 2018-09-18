@@ -1,0 +1,186 @@
+@font-face {
+    font-family: Proxima Nova; /* Имя шрифта */
+    src: url(../fonts/ProximaNova/ProximaNova-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: Proxima Nova L; /* Имя шрифта */
+    src: url(../fonts/ProximaNova/ProximaNova-Light.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: Proxima Nova T; /* Имя шрифта */
+    src: url(../fonts/ProximaNova/ProximaNovaT-Thin.ttf); /* Путь к файлу со шрифтом */
+}
+
+html{
+    width:100%;
+    height: 100%;
+    margin:0;
+}
+
+.body{
+    width:100%;
+    height: 100%;
+    margin:0;
+}
+.main{
+    width:100%;
+    height: 100%;
+    background: url(../images/Layer.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabs{
+    width:330px;
+    height:445px;
+    box-shadow: -4.794px 54.791px 71px rgba(0,0,0,0.58);
+    background: rgba(0,0,0,0.58);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding:50px;
+}
+.form_tabs_item{
+    width:100%;
+    height:100%;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+.tabs > .form_tabs_item, .tabs > .tabs_input { 
+    display: none; 
+}
+
+.tabs > .tabs_label { 
+    font-size: 22px;
+    color: rgb(255,255,255);
+    font-family: "Proxima Nova";
+    position: relative;
+    cursor: pointer;
+}
+.tabs_label[for="sign_up"]{
+    margin-left:50px;
+}
+.tabs > .tabs_input:checked + .tabs_label { 
+    border-bottom: 3px solid #ffab1a; 
+}
+
+.tabs > .tabs_input:nth-of-type(1):checked ~ .form_tabs_item:nth-of-type(1),
+.tabs > .tabs_input:nth-of-type(2):checked ~ .form_tabs_item:nth-of-type(2) { 
+    display: flex;
+}
+
+.form_input, .form_input::-webkit-input-placeholder{
+    width:100%;
+    border:none;
+    background: none;
+    border-bottom:1px solid #fbfbfb;
+    font-size: 17px;
+    line-height: 30px;
+    margin:30px auto;
+    color: rgb(255,255,255);
+    font-family: "Proxima Nova";
+}
+.form_input:focus{
+    outline: none;
+}
+.input_submit{
+    width:50%;
+    height: 39px;
+    border-radius: 20px;
+    border:none;
+    background-color: #f47e16;
+    margin:50px auto 40px auto;
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-family: "Proxima Nova";
+    cursor: pointer;
+}
+.checkbox_area_label{
+    font-size: 15px;
+    color: rgb(255,255,255);
+    font-weight: 300;
+    font-family: "Proxima Nova";
+}
+.forgot_pass{
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-family: "Proxima Nova";
+    text-decoration: none;
+    text-align: center;
+}
+.checkbox_area_input {
+    opacity: 0;
+    float:left;
+}
+  
+.checkbox_area_input + .checkbox_area_label {
+    margin: 0 0 0 5px;
+    position: relative;
+    cursor: pointer;
+    float: left;
+}
+
+.checkbox_area_input + .checkbox_area_label ~ .checkbox_area_label {
+    margin: 0 0 0 40px;
+}
+  
+.checkbox_area_input + .checkbox_area_label::before {
+    content: ' ';
+    position: absolute;
+    left: -25px;
+    top: 0px;
+    width: 15px;
+    height: 15px;
+    display: block;
+    background: white;
+    border: 1px solid #A9A9A9;
+    border-radius: 1px;
+}
+
+.checkbox_area_input + .checkbox_area_label::after {
+    content: ' ';
+    position: absolute;
+    left: -25px;
+    top: 0px;
+    width: 17px;
+    height: 17px;
+    display: block;
+    z-index: 1;
+    background: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNC41MDIsNzUuNDk2Yy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTgtMzYuMjA0LDBMMTYxLjU5NCwzODIuMjAzTDQzLjcwMiwyNjQuMzExYy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTctMzYuMjA0LDAgICAgYy05Ljk5OCw5Ljk5Ny05Ljk5OCwyNi4yMDUsMCwzNi4yMDNsMTM1Ljk5NCwxMzUuOTkyYzkuOTk0LDkuOTk3LDI2LjIxNCw5Ljk5LDM2LjIwNCwwTDUwNC41MDIsMTExLjcgICAgQzUxNC41LDEwMS43MDMsNTE0LjQ5OSw4NS40OTQsNTA0LjUwMiw3NS40OTZ6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==') no-repeat center center;
+    -ms-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .3s ease;
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    background-color: #2159a7;
+    opacity: 0;
+    border-radius: 1px;
+}
+
+.checkbox_area_input:checked + .checkbox_area_label::after {
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    border-radius: 1px;
+}
+
+@media (max-width:450px){
+    .tabs{
+        width:auto;
+        height:auto;
+    }
+    .main {
+        display: block;
+    }
+}
+@media (max-height:480px){
+    html{
+        width:auto;
+        height: auto;
+    }
+}

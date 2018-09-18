@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Registration homework</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="body">
+        <main class="main">
+            <section class="tabs">
+                <input type="radio" name="tab" checked="checked" id="sign_in" class="tabs_input"/>
+                <label for="sign_in" class="tabs_label">SIGN IN</label>
+                <input type="radio" name="tab" id="sign_up" class="tabs_input"/>
+                <label for="sign_up" class="tabs_label">SIGN UP</label>
+                <form action="https://reqres.in/api/login" method="POST" name="sign_in_form" class="form_tabs_item">
+                    <input type="email" id="email_in" name="email" class="form_input" required="required" placeholder="Email ID">
+                    <input type="password" id="password_in" autocomplete="on" name="password" class="form_input" required="required" placeholder="Password">
+                    <span class="checkbox_area">
+                        <input type="checkbox" name="save_in" id="save_in" class="checkbox checkbox_area_input">
+                        <label class="checkbox_area_label" for="save_in">Keep me logged in</label>
+                    </span>
+                    <input class="input_submit" type="submit" value="LOGIN" />
+                    <a class="forgot_pass" href="">Forgot password?</a>
+                </form>
+                <form action="https://reqres.in/api/register" method="POST" name="sign_up_form" class="form_tabs_item">
+                    <input type="tel" id="mobilePhone_up" name="mobilePhone" class="form_input" required="required" placeholder="Mobile Phone" pattern="\d+">
+                    <input type="email" id="email_up" name="email" required="required" class="form_input" placeholder="Email ID">
+                    <input type="password" id="password_up" autocomplete="on" name="password" class="form_input" required="required" placeholder="Password">
+                    <span class="checkbox_area">
+                        <input type="checkbox" name="agree_up" id="agree_up" class="checkbox checkbox_area_input">
+                        <label class="checkbox_area_label" for="agree_up">I agree to terms and conditions</label>
+                    </span>
+                    <input class="input_submit" type="submit" value="REGISTER" />
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
